@@ -1,0 +1,12 @@
+{
+  "labels":[
+    "Nature",
+    "Politics",
+    "Entertainment",
+    "Economics",
+    "Culture",
+    "Science"
+  ],
+  "threshold":0.0,
+  "positive_label":null
+}
