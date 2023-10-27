@@ -41,25 +41,25 @@
 
   ],
   "performance":{
-    "cats_score":0.1666666667,
+    "cats_score":0.6666666667,
     "cats_score_desc":"macro F",
     "cats_micro_p":1.0,
     "cats_micro_r":1.0,
     "cats_micro_f":1.0,
-    "cats_macro_p":0.1666666667,
-    "cats_macro_r":0.1666666667,
-    "cats_macro_f":0.1666666667,
-    "cats_macro_auc":0.0,
+    "cats_macro_p":0.6666666667,
+    "cats_macro_r":0.6666666667,
+    "cats_macro_f":0.6666666667,
+    "cats_macro_auc":0.6666666667,
     "cats_f_per_type":{
       "Nature":{
-        "p":0.0,
-        "r":0.0,
-        "f":0.0
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
       },
       "Politics":{
-        "p":0.0,
-        "r":0.0,
-        "f":0.0
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
       },
       "Entertainment":{
         "p":1.0,
@@ -77,12 +77,12 @@
         "f":0.0
       },
       "Science":{
-        "p":0.0,
-        "r":0.0,
-        "f":0.0
+        "p":1.0,
+        "r":1.0,
+        "f":1.0
       }
     },
-    "tok2vec_loss":0.0,
+    "tok2vec_loss":0.0000000016,
     "textcat_loss":0.0
   }
 }
