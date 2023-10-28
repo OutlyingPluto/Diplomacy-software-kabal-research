@@ -82,7 +82,7 @@
         "f":1.0
       }
     },
-    "tok2vec_loss":0.0000000007,
+    "tok2vec_loss":0.0000000001,
     "textcat_loss":0.0
   }
 }
