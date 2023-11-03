@@ -102,6 +102,11 @@ def ScrapeDir(url):
             for i in titles:
                 try:
                     LinksTable[i.get_text()] = i['href']
+
+                    if i['href'][0:5] != "https":
+                        root = urlparse(url).scheme + "://" + urlparse(url).netloc
+                        LinksTable[i.get_text()] = root + i['href']
+
                 except TypeError:
                     pass
 
@@ -169,12 +174,13 @@ def ParseTitles(titles):
     return classification
 
 links = ScrapeDir(url)
-titles = links.keys()
-results = ParseTitles(titles)
 
-print(results)
+# titles = links.keys()
+# results = ParseTitles(titles)
 
-# ScrapePage(list(links.values())[3])
+# print(results)
+
+ScrapePage(list(links.values())[9])
 
 """
 # Use this wherever you're calling these scraper functions
