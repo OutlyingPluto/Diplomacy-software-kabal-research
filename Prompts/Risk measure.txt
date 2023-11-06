@@ -1,0 +1,58 @@
+The risk measure is a number from 1 to 10 that quantifies the magnitude of risk facing a country. Every event causes a change to the risk measure. The following defines values for changes to the risk measure:
+
+-2	De-escalation of situation
+0	Unrelated to risk
++2	Minor threat; creates difficulty
++4	Notable threat to communities and stability
++6	Major threat; threatens lives and livelihoods
+
+What is the risk measure associated to the following article:
+
+Zelenskiy denies Ukrainian general’s claim war is at stalemate
+President says Ukraine must keep fighting, and aide says general’s comments ‘make aggressor’s job easier’
+
+Volodymyr Zelenskiy has denied a suggestion from the Ukrainian military’s commander-in-chief that the war with Russia has reached a stalemate, and a senior spokesperson for his administration has rebuked the general in question and accused him of making “the aggressor’s job easier”.
+
+Gen Valerii Zaluzhnyi had offered his blunt assessment of the situation in an interview published last week. “Just like in the first world war, we have reached the level of technology that puts us into a stalemate,” he told the Economist, adding: “There will most likely be no deep and beautiful breakthrough.”
+
+Zaluzhnyi said the war had entered a phase of attritional fighting in which neither side would make much progress unless there was a technological breakthrough. He also suggested that Russia was slowly getting the upper hand thanks to its superior numbers.
+
+The general said he had underestimated Vladimir Putin’s willingness to sacrifice his own soldiers, saying at least 150,000 had been killed so far. “Let’s be honest, [Russia] is a feudal state where the cheapest resource is human life. And for us … the most expensive thing we have is our people,” Zaluzhnyi said.
+
+Prolonged fighting had put Ukraine at a disadvantage, he admitted. “This will benefit Russia, allowing it to rebuild its military power, eventually threatening Ukraine’s armed forces and the state itself.”
+
+On Saturday, Zelenskiy denied the war was at a stalemate and said more work with allies was needed to strengthen air defences.
+
+“Today time has passed and people are tired, but this is not a stalemate,” he said during a news conference with the visiting European Commission president, Ursula von der Leyen. “Russia controls the skies. We care about our military.”
+
+Zelenskiy acknowledged there had been difficulties in the war, which is in its 21st month, and he conceded that Kyiv had yet to achieve any major successes in its counteroffensive.
+
+But he said Ukrainian troops had no alternative but to keep fighting and needed more support from western allies, especially with air defences.
+
+Ukrainian forces have made slow progress through vast Russian minefields in a counteroffensive that began in the east and south in early June, but Russia has hit back hard in the east.
+
+Zelenskiy’s aide Ihor Zhovkva upbraided Zaluzhnyi for his comments, warning that they could be used to Russia’s advantage.
+
+“If I were the military, probably the last thing I would do is to comment to the press and the public on what is happening at the front, what may happen at the front, and possible options,” he said in televised remarks reported by the Kyiv Independent.
+
+“Because then we make the aggressor’s job easier. I am sure that everything has been read very carefully and noted, and conclusions have been drawn.”
+
+Zhovkva added: “If we can achieve success this way, then perhaps this is a very deep strategic plan. But it seems very strange to me.”
+
+The Kremlin has also taken issue with Zaluzhnyi’s assessment of the state of the conflict. Asked by reporters on Thursday whether Zaluzhnyi was right that the conflict was moving towards an impasse, the Kremlin spokesperson Dmitry Peskov said: “No, it has not reached a stalemate.”
+
+He said it was “absurd” for Kyiv to talk about a possible Ukrainian victory on the battlefield. “The sooner the Kyiv regime understands this for itself, the sooner some prospects will open up,” Peskov added.
+
+On Friday, Zelenskiy announced he had put a new commander in charge of Ukraine’s special forces. He gave no explanation for the appointment.
+
+Zelenskiy said in his nightly video address that Col Serhiy Lupanchuk would now head the forces, describing him as “an experienced officer, combat officer and the right man in command”.
+
+The president said Lupanchuk’s predecessor, Maj Gen Viktor Horenko, who had led the forces from July 2022, would continue to carry out “special tasks” within the defence ministry’s intelligence directorate.
+
+Horenko said in an interview that he had been told nothing. “I personally don’t know the reasons. Let me just say that I learned of this from the media,” he told the Ukrainska Pravda news site.
+
+Ukraine’s special forces are believed to be behind the most sophisticated operations its military has conducted in areas under Russian control, in particular in Crimea, which was annexed by Moscow in 2014, eight years before Moscow’s full land invasion.
+
+Recent examples include a strike in September on the headquarters of Russia’s Black Sea Fleet command in Sevastopol, and attacks on a patrol ship and a submarine stationed in the peninsula.
+
+Reuters contributed to this report.
