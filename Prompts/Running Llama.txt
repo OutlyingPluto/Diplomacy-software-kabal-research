@@ -1,0 +1,6 @@
+torchrun --nproc_per_node 2 example_chat_completion.py \ --ckpt_dir llama-2-13b-chat/ \ --tokenizer_path tokenizer.model \ --max_seq_len 512 --max_batch_size 6
+
+torchrun --nproc_per_node 2 Diplomacy.py \ --ckpt_dir llama-2-13b-chat/ \ --tokenizer_path tokenizer.model \ --max_seq_len 512 --max_batch_size 6
+
+
+RuntimeError: [enforce fail at ..\c10\core\impl\alloc_cpu.cpp:72] data. DefaultCPUAllocator: not enough memory: you tried to allocate 317214720 bytes.

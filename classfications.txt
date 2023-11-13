@@ -49,3 +49,25 @@ Of the following classes: Nature, Politics, Entertainment, Economics, Culture an
 ChatGPT
 The article with the headline "Caster Semenya: ‘How would I label myself? I’m an African. I’m a woman. I’m a different woman" likely belongs to the "Culture" class. This article appears to be related to topics of identity, self-expression, and individual perspectives, which are often discussed in cultural contexts.
 
+
+## Llama
+
+Iceland: experts predict feared volcanic eruption could destroy town near Reykjavik | Iceland | The Guardian corresponds to Error: The class of this article could not be deduced.
+Israeli troops in key battle with Hamas gunmen near Gaza City hospital | Israel | The Guardian corresponds to entertainment.
+Hundreds of thousands rally for Gaza in London as police arrest far-right protesters | Protest | The Guardian corresponds to politics.
+Pope Francis dismisses conservative Texas bishop and critic Joseph Strickland  | Pope Francis | The Guardian corresponds to politics.
+‘Very difficult’: father of Luis Díaz speaks for first time after release by Colombia guerillas | Colombia | The Guardian corresponds to Error: The class of this article could not be deduced.
+‘Personal and painful’: how Gaza war has split families, friends and colleagues in Britain | Israel-Hamas war | The Guardian corresponds to entertainment.
+London’s pro-Palestine march live: 126 people arrested as police highlight ‘deeply concerning’ rightwing violence – as it happened | Israel-Hamas war | The Guardian corresponds to entertainment.
+Sweden’s schools minister declares free school ‘system failure’ | Sweden | The Guardian corresponds to politics.
+Ex-Nato chief proposes Ukraine joins without Russian-occupied territories | Ukraine | The Guardian corresponds to science.
+Israel-Hamas war live: Netanyahu vows to press on with ‘full force’ as fighting rages around main Gaza hospital  | Israel-Hamas war | The Guardian corresponds to politics.
+Outrage grows after ‘chilling call for genocide’ by Florida Republican  | Republicans | The Guardian corresponds to science.
+Ohio Republicans move to exclude judges from interpreting enshrined abortion rights | Ohio | The Guardian corresponds to politics.
+As a former Palestinian negotiator, I know Biden’s two-state solution is sheer delusion | Ahmad Samih Khalidi | The Guardian corresponds to politics.
+ ‘A revenge term’: what would another four years of Trump look like? | Donald Trump | The Guardian corresponds to politics.
+Lost in space: astronaut’s toolbag orbits Earth after escaping during spacewalk | Space | The Guardian corresponds to science.
+My life has been defined by genocide of Jewish people. I look on Gaza with concern | Jason Stanley | The Guardian corresponds to culture.
+The public doesn’t understand the risks of a Trump victory. That’s the media’s fault | Margaret Sullivan | The Guardian corresponds to politics.
+Australians aren’t joining in any more – and it appears to be having big political consequences | Australian politics | The Guardian corresponds to politics.
+Iceland: experts predict feared volcanic eruption could destroy town near Reykjavik | Iceland | The Guardian corresponds to entertainment

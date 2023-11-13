@@ -1,12 +1,8 @@
 The subclasses of political risks are:
 
-- political dividedness
-- war
-- reliability of the legal system
-- corruption
-- inappropriate government intervention
-- declining democracy
-- terrorism
-- civil wars; coups
+1. War
+2. Dividedness
+3. Scandals
+4. Cultural diplomacy
 
 To which class does the event described by the article belong to?

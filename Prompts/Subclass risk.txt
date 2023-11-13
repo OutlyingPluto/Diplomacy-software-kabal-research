@@ -1,1 +1,21 @@
 Of the following classes: Nature, Politics, Entertainment, Economics, Culture and Science; to which one does the article with the following headline belong to: "Love Actually at 20: Richard Curtis’s imperfect yet irresistible Christmas romcom"?
+
+============================================================
+
+Your job is to classfiy the headlines of articles into the following classes:
+
+- Nature
+- Politics
+- Entertainment
+- Economics
+- Culture
+- Science
+
+Each article can belong to only one class. For example:
+
+Headline: "England's poor World Cup doesn't mean 'huge clear-out,' says skipper Buttler"
+Class: Entertainment
+
+Find the class to which the following headline belongs:
+
+Headline: "Love Actually at 20: Richard Curtis’s imperfect yet irresistible Christmas romcom"
