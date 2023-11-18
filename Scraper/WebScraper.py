@@ -1,9 +1,11 @@
 from urllib.request import urlopen
 from urllib.parse import urlparse
 
+import pickle
+
 from bs4 import BeautifulSoup
 
-url = "https://www.theguardian.com/world"
+urlMAIN = "https://www.theguardian.com/world"
 # CNA = "https://www.channelnewsasia.com/latest-news"
 # TOI = "https://timesofindia.indiatimes.com/"
 # CNN = "https://edition.cnn.com/"
@@ -25,10 +27,17 @@ def CleanPage(page): # this function is still dysfunctional
 
 
 def ScrapePage(url):
-    page = urlopen(url)
+    try:
+        page = urlopen(url)
+    except ValueError:
+        url = urlparse(urlMAIN).scheme + "://" + urlparse(urlMAIN).netloc + url
+        page = urlopen(url)
 
     html_bytes = page.read()
     html = html_bytes.decode("utf-8")
+
+    # one-liner cuz y not
+    # html = urlopen(url).read().decode("utf-8")
 
     title_index = html.find("<title")
 
@@ -43,12 +52,29 @@ def ScrapePage(url):
     end_index = html.find("</title>")
     title = html[start_index:end_index]
 
-    print(title)
-
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text()
 
-    lines = (line.strip() for line in text.splitlines())
+    raw_paras = []
+
+    if "https://www.channelnewsasia.com" in url:
+        filter = lambda tag: tag.name == "p" and not tag.has_attr("class")
+        raw_data = soup.find_all(filter)
+        for data in raw_data:
+            raw_paras.append(data)
+
+        paras = [para.get_text() for para in raw_paras[:-4]]
+    elif "https://www.theguardian.com" in url:
+        filter = lambda tag: tag.name == "p" and tag.has_attr("class") #tag.get("class") == "dcr-1kas69x"
+        raw_data = soup.find_all(filter)
+        for data in raw_data:
+            raw_paras.append(data)
+
+        paras = [para.get_text() for para in raw_paras]
+
+    for para in paras:
+        print(para)
+
+    lines = (line.strip() for line in paras)
 
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
 
@@ -102,11 +128,6 @@ def ScrapeDir(url):
             for i in titles:
                 try:
                     LinksTable[i.get_text()] = i['href']
-
-                    if i['href'][0:5] != "https":
-                        root = urlparse(url).scheme + "://" + urlparse(url).netloc
-                        LinksTable[i.get_text()] = root + i['href']
-
                 except TypeError:
                     pass
 
@@ -153,34 +174,26 @@ def ScrapeDir(url):
         
         case _:
             return None
-        
-def ParseTitles(titles):
 
-    import spacy
-    import os
+links = ScrapeDir(urlMAIN)
 
-    dir = os.getcwd()
-    # dir = dir[:len(dir) - dir[::-1].find("\\")] # Move down a level
+articles = {}
 
-    nlp_textcat = spacy.load(dir + "\\textcat_output\\model-last")
+for key, value in links.items():
+    articles[key] = ScrapePage(value)
 
-    classification = {}
+with open("Articles.bin", "rb") as f:
+    try:
+        ExistingData = pickle.load(f)
+        articles.update(ExistingData)
+    except EOFError:
+        pass
 
-    for title in titles:
-        docPred = nlp_textcat(title)
-        res = docPred.cats
-        classification[title] = max(res, key=res.get)
+with open("Articles.bin", "wb") as f:
+    pickle.dump(articles, f)
 
-    return classification
 
-links = ScrapeDir(url)
-
-# titles = links.keys()
-# results = ParseTitles(titles)
-
-# print(results)
-
-ScrapePage(list(links.values())[5])
+# ScrapePage("https://www.theguardian.com/world/2023/nov/18/apec-summit-ends-with-unity-on-wto-reform-but-not-gaza-or-ukraine")
 
 """
 # Use this wherever you're calling these scraper functions
