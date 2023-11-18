@@ -50,15 +50,12 @@ CREATE TABLE IF NOT EXISTS countries (
 
 
 event_to_country_table_maker = """
-CREATE TABLE IF NOT EXISTS impacts (
-    event_id INTEGER,
-    FOREIGN KEY(event_id) REFERENCES events(eID),
-    country1_id INTEGER,
-    FOREIGN KEY(country_id) REFERENCES countries(cID),
-    country2_id INTEGER,
-    FOREIGN KEY(country_id) REFERENCES countries(cID),
+CREATE TABLE impacts (
+    event_id INTEGER REFERENCES events(eID),
+    countryA_id INTEGER REFERENCES countries(cID),
+    countryB_id INTEGER REFERENCES countries(cID),
     risk_political INTEGER,
-    risk_economic INTEGER/*,
+    risk_economic INTEGER
 );
 """
 # event_id | country1 (first country affected) | country2 (second country affected) | impact (impact on relationship between the two countries)

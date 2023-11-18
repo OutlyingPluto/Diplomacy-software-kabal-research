@@ -5,6 +5,8 @@ import pickle
 
 from bs4 import BeautifulSoup
 
+refresh = False
+
 urlMAIN = "https://www.theguardian.com/world"
 # CNA = "https://www.channelnewsasia.com/latest-news"
 # TOI = "https://timesofindia.indiatimes.com/"
@@ -182,12 +184,13 @@ articles = {}
 for key, value in links.items():
     articles[key] = ScrapePage(value)
 
-with open("Articles.bin", "rb") as f:
-    try:
-        ExistingData = pickle.load(f)
-        articles.update(ExistingData)
-    except EOFError:
-        pass
+if not refresh:
+    with open("Articles.bin", "rb") as f:
+        try:
+            ExistingData = pickle.load(f)
+            articles.update(ExistingData)
+        except EOFError:
+            pass
 
 with open("Articles.bin", "wb") as f:
     pickle.dump(articles, f)
