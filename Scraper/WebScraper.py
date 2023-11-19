@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 refresh = False
 
-urlMAIN = "https://www.theguardian.com/world"
+urlMAIN = "https://www.channelnewsasia.com/latest-news"
 # CNA = "https://www.channelnewsasia.com/latest-news"
 # TOI = "https://timesofindia.indiatimes.com/"
 # CNN = "https://edition.cnn.com/"
@@ -73,6 +73,8 @@ def ScrapePage(url):
 
         paras = [para.get_text() for para in raw_paras]
 
+    print("====================== NEXT ARTICLE ======================")
+
     for para in paras:
         print(para)
 
@@ -81,7 +83,7 @@ def ScrapePage(url):
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
 
     text = '\n'.join(chunk for chunk in chunks if chunk)
-
+    
     print(text)
 
     return(text)
