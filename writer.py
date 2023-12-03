@@ -49,20 +49,19 @@ CREATE TABLE IF NOT EXISTS countries (
 # for stability index, higher number means more stable
 
 
-event_to_country_table_maker = """
+country_rel_table_maker = """
 CREATE TABLE impacts (
-    event_id INTEGER REFERENCES events(eID),
     countryA_id INTEGER REFERENCES countries(cID),
     countryB_id INTEGER REFERENCES countries(cID),
     risk_political INTEGER,
     risk_economic INTEGER
 );
 """
-# event_id | country1 (first country affected) | country2 (second country affected) | impact (impact on relationship between the two countries)
+# country1 (first country affected) | country2 (second country affected) | impact (impact on relationship between the two countries)
 # for impact, positive number means relationship is worsened, negative number means relationship is bettered, 0 means no/negligible impact
 
 custom_query = """
-
+DESCRIBE events;
 """
 
-executeWriteQuery(diplo_db, event_to_country_table_maker)
+executeReadQuery(diplo_db, custom_query)
