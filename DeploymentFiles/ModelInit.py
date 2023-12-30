@@ -4,6 +4,7 @@ from math import exp, log
 import random
 
 risk_threshold = 6
+bilateral_update_threshold = 2
 
 with open("countries.bin", "rb") as f:
     NamedCountries = pickle.load(f)
@@ -62,6 +63,7 @@ class node:
         self.value = 0 # No risk when initialised
 
         self.events = [] # Store the ids of events that have affected this node
+        # self.events this is just for processing and not for data storage; the database performs that function
 
         self.change = 0
 
@@ -81,7 +83,7 @@ class node:
 
 class bilateral:
     def __init__(self, countries):
-        self.cause = [] # Refer to an event ID
+        self.cause = [] # Refer to an event ID; this is only stored if an event causes a significant change in bilateral relations
 
         self.countries = [] # Countries is a list of length 2 containing class instances of 2 countries; the country with the smaller ID is ahead
 
@@ -91,8 +93,25 @@ class bilateral:
         self.political = node(self.countries, classes("p"))
         self.economic = node(self.countries, classes("e"))
 
-        print(f"The nodes {self.political.country} and {self.economic.country} have been initialised.")
+        print(f"The node {self.political.country} has been loaded.")
 
+        # Store causes
+        self.loc = "Events\\" + "".join(self.countries) + ".bin"
+        self.path = Path(self.loc)
+
+        if self.path.is_file():
+            with open(self.loc, "rb") as f:
+                self.cause = pickle.load(f)
+        else:
+            with open(self.loc, "wb") as f:
+                pickle.dump(self.cause, f)
+
+        """
+        As of now this segment is not needed
+
+        1. It needs to be improved to connect to both countries in play
+        2. It is more important when we consider layers of propagation
+        
         # Weight gives a link from the bilateral relations to the weights of the first country
         self.weights = [[0.5 for i in range(7)] for j in range(2)]
 
@@ -106,6 +125,7 @@ class bilateral:
             self.weights = {"domestic": [[0.5 for i in range(7)] for j in range(2)]}
             with open(self.loc, "wb") as f:
                 pickle.dump(self.weights, f)
+        """
 
 def GetBilateral(country1id, country2id, countries, BilateralInfo):
     # The input is the ids of two countries
@@ -141,6 +161,8 @@ def Update(node, change, weight):
         print(f"There is a grave situation in {node.country} in the field of {node.subclass}. The risk increases by the risk score of {update}")
     
     node.update(update)
+
+    return update
 
 # Create a class for the different countries in the graph
 
@@ -215,12 +237,12 @@ class domestic:
                 
                 rel = GetBilateral(CountryID, self.id, countries, BilateralInfo)
                 i = 7
-                Update(rel.political, self.nodes[StartNode].change, self.weights[country][StartNode][i])
-                rel.cause.append(self.nodes[StartNode].events[-1])
+                if Update(rel.political, self.nodes[StartNode].change, self.weights[country][StartNode][i]) > bilateral_update_threshold:
+                    rel.cause.append(self.nodes[StartNode].events[-1])
                 
                 i = 8
-                Update(rel.economic, self.nodes[StartNode].change, self.weights[country][StartNode][i])
-                rel.cause.append(self.nodes[StartNode].events[-1])
+                if Update(rel.economic, self.nodes[StartNode].change, self.weights[country][StartNode][i]) > bilateral_update_threshold:
+                    rel.cause.append(self.nodes[StartNode].events[-1])
 
                 if ( rel.political.value + rel.economic.value ) / 2 > 8:
                     print(f"There is a grave situation in the relations between {self.name} and {country} due to the event id {self.nodes[StartNode].events[-1]}.")
@@ -271,6 +293,7 @@ def ReadNodes(countries, BilateralInfo):
             nodes = pickle.load(f)
 
         ReloadNodes(nodes[0], nodes[1], countries, BilateralInfo)
+        print("Nodes have been successfully loaded.")
     except FileNotFoundError:
         AllNodes = ExtractNodes(countries, BilateralInfo)
 
