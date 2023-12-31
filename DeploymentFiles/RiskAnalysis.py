@@ -46,9 +46,16 @@ def CountryRisk():
     
     EconScore = EconScore / 4
 
-    print(f"""Political risk: {PolScore}
+    print(f"""Here is the risk report for {country} :
+          
+    Political risk: {PolScore}
     Economic risk: {EconScore}
 
     The reason for this risk are the following events:
     # This needs to be retrieved from the database; get all the entries for the country and sort them in order of their risk score
+    
+    The following are the bilaterial risk that {country} faces:
+    # Next to do: Risks from all other countries need to be displayed as well
     """)
+
+    
