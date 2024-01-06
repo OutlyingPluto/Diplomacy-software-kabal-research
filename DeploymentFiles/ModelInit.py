@@ -2,12 +2,14 @@ import pickle
 from pathlib import Path
 from math import exp, log
 import random
+import country_converter as coco
 
 risk_threshold = 6
 bilateral_update_threshold = 2
 
-with open("countries.bin", "rb") as f:
+with open("C:\Work\Programming\Hackathons\Diplomacy software\DeploymentFiles\countries.bin", "rb") as f:
     NamedCountries = pickle.load(f)
+    NamedCountries = coco.convert(names=NamedCountries, to='name_short')
 
 """
 Note: 
