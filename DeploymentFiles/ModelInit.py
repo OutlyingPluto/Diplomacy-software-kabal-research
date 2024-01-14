@@ -304,6 +304,16 @@ def ReadNodes(countries, BilateralInfo):
 
         print("Nodes freshly initialised in Nodes.bin")
 
+def SaveNodes(countries, BilateralInfo):
+    AllNodes = ExtractNodes(countries, BilateralInfo)
+
+    loc = "Weights\\Nodes.bin"
+
+    with open(loc, "wb") as f:
+        pickle.dump(AllNodes, f)
+
+    print("Nodes saved in Nodes.bin")  
+
 def InitModel():
     countries = []
 
@@ -326,6 +336,8 @@ def InitModel():
                 countries[i].AddLink(countries[j])
 
     ReadNodes(countries, BilateralInfo)
+
+    print("The value of nodes has been extracted from storage and loaded into the model.")
 
     return countries, BilateralInfo
 

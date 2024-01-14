@@ -24,7 +24,7 @@ def BilateralRisk():
     """)
 
 def CountryRisk():
-    country = input("Enter the country whose risk situation you want to look at:")
+    country = input("Enter the country whose risk situation you want to look at: ")
 
     CountryID = NamedCountries.index(country)
 

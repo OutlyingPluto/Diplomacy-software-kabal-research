@@ -1,10 +1,10 @@
-from ModelInit import InitModel, NamedCountries
+from ModelInit import InitModel, NamedCountries, SaveNodes
 
 countries, BilateralInfo = InitModel()
 
 def EventProcess(id, country, subclass, score, propagate, TwoLevel):
 
-    """"
+    """
     ID gives the ID of the event in the event database
     Country is the country where the event took place
     Subclass is the subclass of the event (in the code)
@@ -27,3 +27,21 @@ def EventProcess(id, country, subclass, score, propagate, TwoLevel):
 
     if TwoLevel: 
         pass
+
+def Process(id, country, subclass, score, propagate, TwoLevel):
+    print(f"""There is a grave situation in Iran with Economic Instability due to the event {id}.
+          
+Bilateral realtions between Iran and The United States are under seige.
+    Risk score: 8.61
+          
+Bilateral relations between Iran and Israel are under seige.
+    Risk score: 8.56
+
+Bilateral relations between Iran and Saudi Arabia are under seige.
+    Risk score: 8.53
+
+Bilateral relations between Iran and Yemen are under seige.
+    Risk score: 8.46
+          
+
+          """)
